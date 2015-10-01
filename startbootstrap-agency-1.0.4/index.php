@@ -5,26 +5,42 @@
 
 // adding php to top of index. Maybe relocate eventually.
 
+
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+
+echo "HELLO";
+
+print_r($_POST);
+
+
 if (isset($_POST["submit"])) {
 
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
-    $msg = $_POST["message"];
-
-    echo $name . "<br>" $email . "<br>" $phone . "<br>" $msg;
-
+    echo "yes goottt itt";
+    
+//    $name = htmlspecialchars($_POST["name"]);
+//    $email = htmlspecialchars($_POST["email"]);
+//    $phone = $_POST["phone"];
+//    $msg = $_POST["message"];
+//
+//    echo $name; 
+//    echo $email;
+//    echo $phone;
+//    echo $msg;
+//    echo "<h1>HELLO CAN U SEE ME</h1>";
+//}
 
 }
 
-
-echo "HIII";
+echo "<br>";
+echo "<br>";
+echo "<br>";
 
 
 ?>
-
-
-
 
 
 <head>
@@ -285,7 +301,7 @@ echo "HIII";
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" action="index.html" method="post" novalidate>
+                    <form name="sentMessage" id="contactForm" action="index.php" method="post" novalidate>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -310,7 +326,7 @@ echo "HIII";
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" name="submit" class="btn btn-xl"><i class="fa fa-paper-plane"></i> &#09 Send Message</button>
+                                <button type="submit" name="submit" value="submit" class="btn btn-xl"><i class="fa fa-paper-plane"></i> &#09 Send Message</button>
                             </div>
                         </div>
                     </form>
