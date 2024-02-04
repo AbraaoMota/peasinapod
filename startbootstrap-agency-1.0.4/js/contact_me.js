@@ -17,15 +17,21 @@ $(function() {
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
+
+            var dataToSend = {
+                name: name,
+                phone: phone,
+                email: email,
+                desc: message
+            }
+
             $.ajax({
-                url: "././mail/contact_me.php",
                 type: "POST",
-                data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
-                },
+                url : "https://hawckh4gy7u5dm2k4ss6lhebbm0kxjta.lambda-url.eu-west-2.on.aws/",
+                dataType: "json",
+                crossDomain: "true",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(dataToSend),
                 cache: false,
                 success: function() {
                     // Success message
@@ -48,7 +54,7 @@ $(function() {
                     $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
-                    $('#contactForm').trigger("reset");
+                    // $('#contactForm').trigger("reset");
                 },
             })
         },
